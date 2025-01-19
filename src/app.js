@@ -2,12 +2,9 @@ const express = require("express");
 
 const app = express();
 
-app.use("/hello", (req, res) => {
-  res.send("Hello from the server");
-});
-
-app.use("/", (req, res) => {
-  res.send("Hello home page");
+// This will only handel GET call to /user
+app.get("/user", (req, res) => {
+  res.send({ firstName: "Vikash", lastName: "Upadhyay" });
 });
 
 app.listen(7777, () => {
